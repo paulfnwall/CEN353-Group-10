@@ -25,7 +25,10 @@ void setup()
 void loop() 
 {
   //Play the game
-
+  // Normal game mode function call
+  game();   
+  // User answers function call
+  userInput();
 }
 
 
@@ -57,4 +60,16 @@ void game()
       c++
     }
   }
+}
+
+// User input function
+void userInput()
+{
+  // Needs work
+}
+
+// Wrong answer function
+void incorrectAnswer()
+{
+  // Needs work
 }
