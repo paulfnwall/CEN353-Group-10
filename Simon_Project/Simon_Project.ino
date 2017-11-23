@@ -84,9 +84,9 @@ void userInput()
             tone(3, notes[j]);
             delay(200);
             digitalWrite(lights[j], LOW);
-            inputArray[i] = j++;
+            inputArray[i] = i++;
             delay(100);
-            Serial.print(j++);
+            Serial.print(i++);
             
             if(inputArray[i] != outputArray[i])
             {
