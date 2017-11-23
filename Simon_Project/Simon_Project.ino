@@ -1,10 +1,23 @@
-//LED Pins
-
-//Button Pins
-
+boolean buttons [] = {10, 11, 12, 13};   // Button pins
+int buttonState = 0;                     // Check button state    
+boolean lights [] = {4, 5, 6, 7};        // LED pins
+int notes[] = {262, 294, 330, 349};      // Array of tone values for the buzzer
+int turn = 0;                            // Keep track of the # of turns
 
 void setup() 
 {
+  // Set led pins to output
+  for(int i=0; i<4; i++)
+  {
+    pinMode(lights[i], OUTPUT);
+  }
+  // Set button pins to input and off 
+  for(int i=0; i<4; i++)
+  {
+    pinMode(buttons[i], INPUT);
+    digitalWrite(button[i], LOW);
+  }
+
   //Generate array  
 
 }
