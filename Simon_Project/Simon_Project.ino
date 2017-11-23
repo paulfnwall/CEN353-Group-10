@@ -1,8 +1,11 @@
-boolean buttons [] = {10, 11, 12, 13};   // Button pins
-int buttonState = 0;                     // Check button state    
-boolean lights [] = {4, 5, 6, 7};        // LED pins
+int buttons [] = {10, 11, 12, 13};       // Button pins
+int buttonState [] = {1, 2, 3, 4, 5};    // Check button state    
+int lights [] = {4, 5, 6, 7};            // LED pins
 int notes[] = {262, 294, 330, 349};      // Array of tone values for the buzzer
 int turn = 0;                            // Keep track of the # of turns
+
+int inputArray[100];                     // For user input sequences 
+
 
 void setup() 
 {
@@ -66,6 +69,36 @@ void game()
 void userInput()
 {
   // Needs work
+    for(int i=0; i<=turn;)
+    {
+      for(int b=0; b<4; b++)
+      { 
+        buttonState[b] = digitalRead(buttons[b]);
+    
+        for(int j =0; j<4; j++)
+        {
+    
+          if(buttonState[j] == HIGH)
+          {
+            digitalWrite(lights[j], HIGH);
+            tone(3, notes[j]);
+            delay(200);
+            digitalWrite(lights[j], LOW);
+            inputArray[i] = j++;
+            delay(100);
+            Serial.print(j++);
+            
+            if(inputArray[i] != outputArray[i])
+            {
+              incorrectAnswer();       
+            }
+          i++;
+          }
+        }
+      }
+   }
+   delay(500);
+   turn++;
 }
 
 // Wrong answer function
