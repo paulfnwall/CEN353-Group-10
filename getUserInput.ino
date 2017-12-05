@@ -2,6 +2,7 @@
 void getUserInput () 
 { 
 
+ // Go through this loop for each light in a sequence
  for (int x=0; x <= turn;)
  {
    // Read the state of the buttons
@@ -14,6 +15,8 @@ void getUserInput ()
    // Check if red button is pushed
    if (redButtonState == HIGH)
    { 
+     // Turn light on, play sound, add light number to the input array
+     // and print light number
      digitalWrite(redLED, HIGH);
      playTone(ledNotes[3], 200);
      delay(200);
@@ -34,6 +37,8 @@ void getUserInput ()
    // Check if green button is pushed
    if (greenButtonState == HIGH)
    {
+     // Turn light on, play sound, add light number to the input array
+     // and print light number
      digitalWrite(greenLED, HIGH);
      playTone(ledNotes[2], 200);
      delay(200);
@@ -54,6 +59,8 @@ void getUserInput ()
    // Check if blue button is pushed
    if (blueButtonState == HIGH)
    {
+     // Turn light on, play sound, add light number to the input array
+     // and print light number
      digitalWrite(blueLED, HIGH);
      playTone(ledNotes[1], 200);
      delay(200);
@@ -74,6 +81,8 @@ void getUserInput ()
    // Check if yellow button is pushed 
    if (yellowButtonState == HIGH)
    {
+     // Turn light on, play sound, add light number to the input array
+     // and print light number
      digitalWrite(yellowLED, HIGH);
      playTone(ledNotes[0], 200);
      delay(200);
@@ -93,7 +102,9 @@ void getUserInput ()
    
    // Check if white button is pushed 
    if (whiteButtonState == HIGH)
-   {
+   { 
+     // Turn light on, play sound, add light number to the input array
+     // and print light number
      digitalWrite(whiteLED, HIGH);
      playTone(ledNotes[0], 200);
      delay(200);
