@@ -3,15 +3,17 @@ void baseGame ()
 {    
   for (int y=turn; y <= turn; y++)
   { 
-   Serial.println(""); //Some serial output to follow along
+   Serial.println(""); // Serial output used for debugging
    Serial.print("Turn: ");
    Serial.print(y);
    Serial.println(" ");
-   outputArray[y] = random(1, 6); 
+   outputArray[y] = random(1, 6); // Create random array based on turn count
+    
+    // Send array info to the lights
    for (int x=0; x <= turn; x++)
    { 
+     // Print light number
      Serial.print(outputArray[x]);
-     //Serial.println("");
 
      //If the outputArray is 1, turn on and red LED and play the tone associated with it
      if (outputArray[x] == 1)
